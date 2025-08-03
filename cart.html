@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier - E-Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-blue-600">E-Shop</h1>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition">Accueil</a>
+                    <a href="shop.html" class="text-gray-700 hover:text-blue-600 transition">Boutique</a>
+                    <a href="services.html" class="text-gray-700 hover:text-blue-600 transition">Services</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="cart.html" class="relative">
+                        <i class="fas fa-shopping-cart text-xl text-blue-600"></i>
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </a>
+                    <button class="md:hidden" id="mobile-menu-btn">
+                        <i class="fas fa-bars text-xl text-gray-700"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-blue-600 transition">Accueil</a>
+                <a href="shop.html" class="block py-2 text-gray-700 hover:text-blue-600 transition">Boutique</a>
+                <a href="contact.html" class="block py-2 text-gray-700 hover:text-blue-600 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Header -->
+    <section class="pt-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <h1 class="text-4xl font-bold text-center mb-4">Votre Panier</h1>
+            <p class="text-gray-600 text-center">Gérez vos articles et passez votre commande</p>
+        </div>
+    </section>
+
+    <!-- Cart Content -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Cart Items -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-2xl font-semibold mb-6">Articles dans votre panier</h2>
+                        <div id="cart-items">
+                            <!-- Cart items will be loaded here -->
+                        </div>
+                        <div id="empty-cart" class="text-center py-12 hidden">
+                            <i class="fas fa-shopping-cart text-6xl text-gray-300 mb-4"></i>
+                            <h3 class="text-xl font-semibold text-gray-500 mb-2">Votre panier est vide</h3>
+                            <p class="text-gray-400 mb-6">Ajoutez des produits pour commencer vos achats</p>
+                            <a href="shop.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                                Continuer les achats
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-lg shadow-md p-6 sticky top-24">
+                        <h2 class="text-2xl font-semibold mb-6">Résumé de la commande</h2>
+                        <div class="space-y-4 mb-6">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Sous-total:</span>
+                                <span id="subtotal" class="font-semibold">0,00 €</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Livraison:</span>
+                                <span id="shipping" class="font-semibold">0,00 €</span>
+                            </div>
+                            <div class="border-t pt-4">
+                                <div class="flex justify-between">
+                                    <span class="text-lg font-semibold">Total:</span>
+                                    <span id="total" class="text-lg font-bold text-blue-600">0,00 €</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="checkout-btn" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition disabled:bg-gray-400 disabled:cursor-not-allowed">
+                            Passer la commande
+                        </button>
+                        <div class="mt-4 text-center">
+                            <a href="shop.html" class="text-blue-600 hover:text-blue-700 transition">
+                                Continuer les achats
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">E-Shop</h3>
+                    <p class="text-gray-300">Votre boutique en ligne de confiance pour tous vos besoins.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition">Accueil</a></li>
+                        <li><a href="shop.html" class="text-gray-300 hover:text-white transition">Boutique</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">FAQ</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Livraison</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Retours</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Suivez-nous</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white transition"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">&copy; 2024 E-Shop. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <!-- WhatsApp Floating Icon -->
+    <a href="https://wa.me/773831364" target="_blank" class="whatsapp-float" aria-label="Contactez-nous sur WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+            animation: whatsapp-pulse 1.5s infinite;
+        }
+        @keyframes whatsapp-pulse {
+            0% { transform: scale(1); box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+            50% { transform: scale(1.12); box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+            100% { transform: scale(1); box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        }
+    </style>
+</body>
+</html> 

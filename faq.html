@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - E-Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-blue-600">E-Shop</h1>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition">Accueil</a>
+                    <a href="shop.html" class="text-gray-700 hover:text-blue-600 transition">Boutique</a>
+                    <a href="services.html" class="text-gray-700 hover:text-blue-600 transition">Services</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="cart.html" class="relative">
+                        <i class="fas fa-shopping-cart text-xl text-gray-700 hover:text-blue-600 transition"></i>
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </a>
+                    <button class="md:hidden" id="mobile-menu-btn">
+                        <i class="fas fa-bars text-xl text-gray-700"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-blue-600 transition">Accueil</a>
+                <a href="shop.html" class="block py-2 text-gray-700 hover:text-blue-600 transition">Boutique</a>
+                <a href="services.html" class="block py-2 text-gray-700 hover:text-blue-600 transition">Services</a>
+                <a href="contact.html" class="block py-2 text-gray-700 hover:text-blue-600 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FAQ Header -->
+    <section class="pt-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-16">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Questions Fréquentes</h1>
+                <p class="text-xl text-blue-100">Trouvez rapidement les réponses à vos questions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4">
+            <!-- Search Bar -->
+            <div class="mb-12">
+                <div class="relative max-w-md mx-auto">
+                    <input type="text" id="faq-search" placeholder="Rechercher une question..." 
+                           class="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                </div>
+            </div>
+
+            <!-- FAQ Categories -->
+            <div class="space-y-8">
+                <!-- Commandes -->
+                <div class="faq-category">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fas fa-shopping-bag text-blue-600 mr-3"></i>
+                        Commandes et Paiements
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                            <button class="faq-question w-full px-6 py-4 text-left hover:bg-gray-50 transition flex justify-between items-center">
+                                <span class="font-semibold text-gray-800">Comment passer une commande ?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform"></i>
+                            </button>
+                            <div class="faq-answer hidden px-6 pb-4">
+                                <p class="text-gray-600">Pour passer une commande, ajoutez les produits souhaités à votre panier, puis cliquez sur l'icône du panier dans la barre de navigation. Vérifiez vos articles et cliquez sur "Passer la commande" pour finaliser votre achat.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                            <button class="faq-question w-full px-6 py-4 text-left hover:bg-gray-50 transition flex justify-between items-center">
+                                <span class="font-semibold text-gray-800">Quels moyens de paiement acceptez-vous ?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform"></i>
+                            </button>
+                            <div class="faq-answer hidden px-6 pb-4">
+                                <p class="text-gray-600">Nous acceptons les cartes bancaires (Visa, Mastercard, American Express), PayPal, et les virements bancaires. Tous les paiements sont sécurisés et cryptés.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                            <button class="faq-question w-full px-6 py-4 text-left hover:bg-gray-50 transition flex justify-between items-center">
+                                <span class="font-semibold text-gray-800">Combien de temps pour recevoir ma commande ?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform"></i>
+                            </button>
+                            <div class="faq-answer hidden px-6 pb-4">
+                                <p class="text-gray-600">Les délais de livraison varient entre 2-5 jours ouvrés en France métropolitaine. Pour les commandes expédiées à l'étranger, comptez 5-10 jours ouvrés selon la destination.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Livraison -->
+                <div class="faq-category">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fas fa-truck text-blue-600 mr-3"></i>
+                        Livraison et Retours
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                            <button class="faq-question w-full px-6 py-4 text-left hover:bg-gray-50 transition flex justify-between items-center">
+                                <span class="font-semibold text-gray-800">La livraison est-elle gratuite ?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform"></i>
+                            </button>
+                            <div class="faq-answer hidden px-6 pb-4">
+                                <p class="text-gray-600">Oui ! La livraison est gratuite pour toutes les commandes supérieures à 100€. En dessous de ce montant, les frais de livraison s'élèvent à 9,99€.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                            <button class="faq-question w-full px-6 py-4 text-left hover:bg-gray-50 transition flex justify-between items-center">
+                                <span class="font-semibold text-gray-800">Puis-je retourner un produit ?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform"></i>
+                            </button>
+                            <div class="faq-answer hidden px-6 pb-4">
+                                <p class="text-gray-600">Vous disposez de 30 jours pour retourner un produit à compter de la réception. Le produit doit être dans son état d'origine et dans son emballage. Contactez notre service client pour initier un retour.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                            <button class="faq-question w-full px-6 py-4 text-left hover:bg-gray-50 transition flex justify-between items-center">
+                                <span class="font-semibold text-gray-800">Comment suivre ma commande ?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform"></i>
+                            </button>
+                            <div class="faq-answer hidden px-6 pb-4">
+                                <p class="text-gray-600">Vous recevrez un email de confirmation avec un numéro de suivi dès que votre commande sera expédiée. Vous pouvez également nous contacter pour obtenir des informations sur l'état de votre commande.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compte et Sécurité -->
+                <div class="faq-category">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fas fa-user-shield text-blue-600 mr-3"></i>
+                        Compte et Sécurité
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                            <button class="faq-question w-full px-6 py-4 text-left hover:bg-gray-50 transition flex justify-between items-center">
+                                <span class="font-semibold text-gray-800">Mes données personnelles sont-elles protégées ?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform"></i>
+                            </button>
+                            <div class="faq-answer hidden px-6 pb-4">
+                                <p class="text-gray-600">Absolument ! Nous respectons le RGPD et protégeons vos données personnelles. Vos informations ne sont jamais partagées avec des tiers sans votre consentement explicite.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                            <button class="faq-question w-full px-6 py-4 text-left hover:bg-gray-50 transition flex justify-between items-center">
+                                <span class="font-semibold text-gray-800">Comment modifier mes informations de livraison ?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform"></i>
+                            </button>
+                            <div class="faq-answer hidden px-6 pb-4">
+                                <p class="text-gray-600">Vous pouvez modifier vos informations de livraison dans votre espace client ou en nous contactant directement. Assurez-vous de nous informer avant l'expédition de votre commande.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produits -->
+                <div class="faq-category">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fas fa-box text-blue-600 mr-3"></i>
+                        Produits et Garanties
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                            <button class="faq-question w-full px-6 py-4 text-left hover:bg-gray-50 transition flex justify-between items-center">
+                                <span class="font-semibold text-gray-800">Les produits sont-ils garantis ?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform"></i>
+                            </button>
+                            <div class="faq-answer hidden px-6 pb-4">
+                                <p class="text-gray-600">Tous nos produits bénéficient de la garantie légale de conformité de 2 ans. Certains produits disposent également de garanties constructeur supplémentaires.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden">
+                            <button class="faq-question w-full px-6 py-4 text-left hover:bg-gray-50 transition flex justify-between items-center">
+                                <span class="font-semibold text-gray-800">Que faire si un produit est défectueux ?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform"></i>
+                            </button>
+                            <div class="faq-answer hidden px-6 pb-4">
+                                <p class="text-gray-600">En cas de produit défectueux, contactez immédiatement notre service client. Nous vous guiderons pour un échange ou un remboursement selon le cas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Support -->
+            <div class="mt-16 bg-white rounded-lg shadow-md p-8 text-center">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Vous ne trouvez pas votre réponse ?</h3>
+                <p class="text-gray-600 mb-6">Notre équipe est là pour vous aider !</p>
+                <a href="contact.html" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition inline-block">
+                    <i class="fas fa-envelope mr-2"></i>Nous contacter
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">E-Shop</h3>
+                    <p class="text-gray-300">Votre boutique en ligne de confiance pour tous vos besoins.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition">Accueil</a></li>
+                        <li><a href="shop.html" class="text-gray-300 hover:text-white transition">Boutique</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition">Services</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="faq.html" class="text-gray-300 hover:text-white transition">FAQ</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Livraison</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Retours</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Suivez-nous</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white transition"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">&copy; 2024 E-Shop. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/products.js"></script>
+    <script src="js/faq.js"></script>
+    <!-- WhatsApp Floating Icon -->
+    <a href="https://wa.me/773831364" target="_blank" class="whatsapp-float" aria-label="Contactez-nous sur WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+            animation: whatsapp-pulse 1.5s infinite;
+        }
+        @keyframes whatsapp-pulse {
+            0% { transform: scale(1); box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+            50% { transform: scale(1.12); box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+            100% { transform: scale(1); box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        }
+    </style>
+</body>
+</html> 

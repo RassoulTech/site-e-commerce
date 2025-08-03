@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>E-Shop - Votre boutique en ligne</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-blue-600">E-Shop</h1>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-blue-600 font-semibold">Accueil</a>
+                    <a href="shop.html" class="text-gray-700 hover:text-blue-600 transition">Boutique</a>
+                    <a href="services.html" class="text-gray-700 hover:text-blue-600 transition">Services</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="cart.html" class="relative">
+                        <i class="fas fa-shopping-cart text-xl text-gray-700 hover:text-blue-600 transition"></i>
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </a>
+                    <button class="md:hidden" id="mobile-menu-btn">
+                        <i class="fas fa-bars text-xl text-gray-700"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="index.html" class="block py-2 text-blue-600 font-semibold">Accueil</a>
+                <a href="shop.html" class="block py-2 text-gray-700 hover:text-blue-600 transition">Boutique</a>
+                <a href="services.html" class="block py-2 text-gray-700 hover:text-blue-600 transition">Services</a>
+                <a href="contact.html" class="block py-2 text-gray-700 hover:text-blue-600 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 hero-section text-white">
+        <div class="max-w-7xl mx-auto px-4 py-20">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">Bienvenue sur E-Shop</h1>
+                <p class="text-xl md:text-2xl mb-8">Découvrez notre sélection de produits exceptionnels</p>
+                <a href="shop.html" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition inline-block">
+                    Voir nos produits
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Nos Catégories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-100 rounded-lg p-8 text-center category-card">
+                    <i class="fas fa-tshirt text-4xl text-blue-600 mb-4 floating"></i>
+                    <h3 class="text-xl font-semibold mb-2">Vêtements</h3>
+                    <p class="text-gray-600">Mode tendance pour tous les styles</p>
+                </div>
+                <div class="bg-gray-100 rounded-lg p-8 text-center category-card">
+                    <i class="fas fa-mobile-alt text-4xl text-blue-600 mb-4 floating"></i>
+                    <h3 class="text-xl font-semibold mb-2">Électronique</h3>
+                    <p class="text-gray-600">Technologies de pointe</p>
+                </div>
+                <div class="bg-gray-100 rounded-lg p-8 text-center category-card">
+                    <i class="fas fa-home text-4xl text-blue-600 mb-4 floating"></i>
+                    <h3 class="text-xl font-semibold mb-2">Maison</h3>
+                    <p class="text-gray-600">Décoration et ameublement</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h2 class="text-4xl font-bold text-gray-800">À propos d'E-Shop</h2>
+                    <p class="text-xl text-gray-600 leading-relaxed">
+                        Fondée en 2020, E-Shop est devenue une référence dans le commerce en ligne, 
+                        offrant une expérience d'achat exceptionnelle avec des produits de qualité 
+                        et un service client irréprochable.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600 mb-2 stats-number">50K+</div>
+                            <div class="text-gray-600">Clients satisfaits</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600 mb-2 stats-number">1000+</div>
+                            <div class="text-gray-600">Produits disponibles</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600 mb-2 stats-number">24h</div>
+                            <div class="text-gray-600">Livraison express</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600 mb-2 stats-number">4.9/5</div>
+                            <div class="text-gray-600">Note moyenne</div>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="services.html" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                            Nos Services
+                        </a>
+                        <a href="contact.html" class="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition">
+                            Nous Contacter
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-gradient-to-br from-blue-400 to-purple-600 rounded-2xl p-8 text-white">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="text-center">
+                                <i class="fas fa-shipping-fast text-4xl mb-4"></i>
+                                <h3 class="font-semibold mb-2">Livraison Rapide</h3>
+                                <p class="text-sm text-blue-100">Livraison gratuite dès 100fr</p>
+                            </div>
+                            <div class="text-center">
+                                <i class="fas fa-shield-alt text-4xl mb-4"></i>
+                                <h3 class="font-semibold mb-2">Paiement Sécurisé</h3>
+                                <p class="text-sm text-blue-100">Transactions 100% sécurisées</p>
+                            </div>
+                            <div class="text-center">
+                                <i class="fas fa-headset text-4xl mb-4"></i>
+                                <h3 class="font-semibold mb-2">Support 24/7</h3>
+                                <p class="text-sm text-blue-100">Assistance disponible</p>
+                            </div>
+                            <div class="text-center">
+                                <i class="fas fa-undo text-4xl mb-4"></i>
+                                <h3 class="font-semibold mb-2">Retours Faciles</h3>
+                                <p class="text-sm text-blue-100">30 jours pour changer d'avis</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Products Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Produits Populaires</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="popular-products">
+                <!-- Smartphone Pro -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=400&fit=crop" alt="Smartphone Pro" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-2">Smartphone Pro</h3>
+                        <p class="text-gray-600 text-sm mb-3">Smartphone dernière génération avec appareil photo professionnel.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-blue-600">699,99 fr</span>
+                            <button onclick="addToCart(5)" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition transform hover:scale-105">
+                                <i class="fas fa-cart-plus mr-2"></i>Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jeans Slim Fit -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&h=400&fit=crop" alt="Jeans Slim Fit" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-2">Jeans Slim Fit</h3>
+                        <p class="text-gray-600 text-sm mb-3">Jeans moderne avec une coupe slim fit, parfait pour toutes les occasions.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-blue-600">79,99 fr</span>
+                            <button onclick="addToCart(2)" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition transform hover:scale-105">
+                                <i class="fas fa-cart-plus mr-2"></i>Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Casque Audio -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop" alt="Casque Audio" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-2">Casque Audio</h3>
+                        <p class="text-gray-600 text-sm mb-3">Casque audio sans fil avec réduction de bruit active.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-blue-600">149,99 fr</span>
+                            <button onclick="addToCart(6)" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition transform hover:scale-105">
+                                <i class="fas fa-cart-plus mr-2"></i>Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vase en Céramique -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop" alt="Vase en Céramique" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-2">Vase en Céramique</h3>
+                        <p class="text-gray-600 text-sm mb-3">Vase en céramique artisanale, parfait pour vos fleurs.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-blue-600">34,99 fr</span>
+                            <button onclick="addToCart(11)" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition transform hover:scale-105">
+                                <i class="fas fa-cart-plus mr-2"></i>Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="shop.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                    Voir tous les produits
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">E-Shop</h3>
+                    <p class="text-gray-300">Votre boutique en ligne de confiance pour tous vos besoins.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition">Accueil</a></li>
+                        <li><a href="shop.html" class="text-gray-300 hover:text-white transition">Boutique</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition">Services</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="faq.html" class="text-gray-300 hover:text-white transition">FAQ</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Livraison</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Retours</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Suivez-nous</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white transition"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">&copy; 2024 E-Shop. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/products.js"></script>
+    <script src="js/index.js"></script>
+    <style>
+        /* Animations personnalisées */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%), 
+                        url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            animation: gradientShift 8s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .category-card {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .stats-number {
+            animation: countUp 2s ease-out;
+        }
+        
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+    <!-- WhatsApp Floating Icon -->
+    <a href="https://wa.me/789903674" target="_blank" class="whatsapp-float" aria-label="Contactez-nous sur WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+            animation: whatsapp-pulse 1.5s infinite;
+        }
+        @keyframes whatsapp-pulse {
+            0% { transform: scale(1); box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+            50% { transform: scale(1.12); box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+            100% { transform: scale(1); box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        }
+    </style>
+</body>
+</html> 
