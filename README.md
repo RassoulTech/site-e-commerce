@@ -99,7 +99,6 @@ php -S localhost:8000
 ```
 
 3. Ouvrez votre navigateur et allez à `http://localhost:8000`
-
 ### Méthode 2 : Extension Live Server (VS Code)
 1. Installez l'extension "Live Server" dans VS Code
 2. Clic droit sur `index.html`
